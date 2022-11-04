@@ -1,10 +1,16 @@
 import './App.css';
 
-import navBar from './components/navBar';
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/navBar';
 
 function App() {
+  // esto es un react fragmet <></>
   return (
-    <navBar />
+    <>
+      <NavBar />
+      <ItemListContainer />
+    </>
+    
   );
 }
 
