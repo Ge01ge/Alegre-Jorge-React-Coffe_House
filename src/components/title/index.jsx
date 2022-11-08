@@ -5,7 +5,10 @@ export const title = (props) =>{
     // otra forma seria usando el destructiring
     // export const title = ({greeting}) =>{ return( <h1>Hola yo soy {greeting}</h1>)}
     return (
-        <h1>Hola BienVenido a {props.greeting}</h1>
+        <div className="container-fluid">
+            <h1 className=" py-4">Hola BienVenido a {props.greeting}</h1>
+        </div>
+        
     );
 }
 
