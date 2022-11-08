@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../jojojo";
+import Title from "../Title";
 
 export const ItemListContainer = () =>{
     // alt + 96 = ` (acento grave)
