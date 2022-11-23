@@ -13,6 +13,9 @@ const Item = ({ product }) => {
           />
           <p className="card-text px-2">En Stock: {product.stock} Unidades</p>
           <p className="card-text px-2">Precio: {product.price}</p>
+          <button type="button" className="btn btn-dark px-4 mx-4 my-2">
+            Ver Detalle
+          </button>
         </div>
       </div>
     </div>
