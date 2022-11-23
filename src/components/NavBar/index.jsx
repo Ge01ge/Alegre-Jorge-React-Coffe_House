@@ -34,8 +34,13 @@ export const NavBar = () => {
                   </Link>
                 </li>
                 <li className="nav-item px-4">
-                  <Link className="nav-link" to="/category/122">
-                    Category
+                  <Link className="nav-link" to="/category/accesorio">
+                    Accesorios
+                  </Link>
+                </li>
+                <li className="nav-item px-4">
+                  <Link className="nav-link" to="/category/insumo">
+                   Insumos
                   </Link>
                 </li>
                 <li className="nav-item px-4">
@@ -43,11 +48,6 @@ export const NavBar = () => {
                     Item
                   </Link>
                 </li>
-                {/* <li className="nav-item px-4">
-                  <a className="nav-link" href="#">
-                    Contact
-                  </a>
-                </li> */}
                 <li className="nav-item">
                   <a className="nav_link px-4" href="#">
                     <CartWidget />

@@ -3,7 +3,7 @@ export const items = [
     id: "1",
     name: "Prensa Francesa Gadnic!",
     description: "la prensa francesa Gadnic prepara una taza de café premium en solo 5 minutos, simplemente agregue café molido, agua caliente y presione. No requiere filtros de papel ni cápsulas de plástico. Para los amantes del café: ahora puedes tener una gran taza de café en casa!",
-    category: "Accesorio",
+    category: "accesorio",
     stock: 10,
     price: 11.399,
     img: "https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/CAFETE02/1200x900-CAFETE02-5.jpg&w=500&q=100",

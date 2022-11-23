@@ -1,4 +1,5 @@
 import { Layout } from "../components/Layout";
+import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 
 const ItemView = () => {
     // const { category } = useParams();
@@ -6,12 +7,9 @@ const ItemView = () => {
   
     return (
         <Layout>
-            <h1>Item vistas</h1>
+            <h3> Detalle Del Producto </h3>
+            <ItemDetailContainer />
         </Layout>
-
-    //   <Layout>
-    //     <ItemListContainer />
-    //   </Layout>
     );
   };
   
