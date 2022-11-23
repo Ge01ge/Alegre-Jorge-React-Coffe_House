@@ -1,37 +1,11 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget";
 
 export const NavBar = () => {
   return (
 
     <div>
-        {/* nav manual */}
-      {/* <nav className="nav">
-        <div className="nav_brand">
-          <a className="nav_link" href="#">
-            MiMarca
-          </a>
-        </div>
-        <ul className="nav_list">
-          <li>
-            <a className="nav_link" href="#">
-              Us
-            </a>
-          </li>
-          <li>
-            <a className="nav_link" href="#">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a className="nav_link" href="#">
-              <CartWidget />
-            </a>
-          </li>
-        </ul>
-      </nav> */}
-
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
@@ -55,25 +29,35 @@ export const NavBar = () => {
             <div className="navbar-nav">
               <ul className="navbar-nav">
                 <li className="nav-item px-4">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/">
                     Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item px-4">
+                  <Link className="nav-link" to="/category/122">
+                    Category
+                  </Link>
+                </li>
+                <li className="nav-item px-4">
+                  <Link className="nav-link" to="/item/123">
+                    Item
+                  </Link>
+                </li>
+                {/* <li className="nav-item px-4">
                   <a className="nav-link" href="#">
                     Contact
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav_link px-4" href="#">
                     <CartWidget />
                   </a>
                 </li>
-                <li className="nav-item px-4">
+                {/* <li className="nav-item px-4">
                   <a className="nav-link disabled" href="#">
                     coming soon...
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

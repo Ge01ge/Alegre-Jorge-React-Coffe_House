@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getData().then(
-       (data) => setItem(data.find((item)=> item.id === "2"))
+       (data) => setItem(data.find((item)=> item.id === "1"))
      );
    }, []);
 
