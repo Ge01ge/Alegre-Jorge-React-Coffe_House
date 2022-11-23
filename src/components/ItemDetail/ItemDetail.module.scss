@@ -6,9 +6,30 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+.img1{
+    width: 200px;
+    height: 200px;
+    margin: 20px 10px;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
 .cart1{
-    width: 500px;
-    height: 500px;
-    margin: 10px;
+    width: 320px;
+    height: 400px;
 }
+
+.espacio{
+    margin-bottom: 6rem;
+}
+
+.list-container {
+    margin: 10px auto;
+    width: 80%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    }
