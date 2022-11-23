@@ -8,9 +8,9 @@ export const NavBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Aqui va mi marca/logo
-          </a>
+          <Link className="navbar-brand" to='/'>
+            Coffe-House
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -43,21 +43,12 @@ export const NavBar = () => {
                    Insumos
                   </Link>
                 </li>
-                <li className="nav-item px-4">
-                  <Link className="nav-link" to="/item/123">
-                    Item
+                <li className="nav-item">
+                  <Link className="nav_link px-4" to="/cart">
+                    <CartWidget />
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav_link px-4" href="#">
-                    <CartWidget />
-                  </a>
-                </li>
-                {/* <li className="nav-item px-4">
-                  <a className="nav-link disabled" href="#">
-                    coming soon...
-                  </a>
-                </li> */}
+                
               </ul>
             </div>
           </div>

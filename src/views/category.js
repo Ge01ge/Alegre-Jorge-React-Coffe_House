@@ -1,8 +1,11 @@
-import { Layout } from "../components/Layout";
 import { useParams } from "react-router-dom";
-import Item from "../components/Item/Item";
-import { items } from "../Mocks/Item.mock"; 
+import { Layout } from "../components/Layout";
+
 import ItemListContainer from '../components/ItemListContainer';
+
+// import Item from "../components/Item/Item";
+// import { items } from "../Mocks/Item.mock"; 
+
 
 const CategoryView = () => {
     

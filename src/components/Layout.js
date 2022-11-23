@@ -2,7 +2,7 @@ import NavBar from "../components/NavBar";
 
 export const Layout = ({ children }) => {
     return (
-      <main className="bg-secondary text-dark">
+      <main className="bg-secondary p-2 text-dark bg-opacity-10">
         <NavBar />
         {children}
         <footer>
