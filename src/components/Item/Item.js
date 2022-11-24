@@ -4,11 +4,11 @@ const Item = ({ product }) => {
   return (
 
     // className={`d-inline-flex ${styles.espacio}`}
-   
+
     <div className={`d-inline-flex ${styles.espacio}`}>
-      <div className={`col-md-4 ${styles.cart1}`}>
-        <div className="card col-md-8 border border-dark bg-warning text-dark bg-opacity-10">
-          <h5 className="card-title px-2">{product.name}</h5>
+      <div className={` ${styles.cart1}`}>
+        <div className="card border border-dark bg-warning text-dark bg-opacity-10">
+          <h5 className={`card-title p-2 ${styles.carText}`}>{product.name}</h5>
           <img
             src={product.img}
             alt={product.description}

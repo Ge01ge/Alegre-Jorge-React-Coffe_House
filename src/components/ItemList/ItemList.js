@@ -1,16 +1,20 @@
 import Item from "../Item/Item";
-// import styles from "../ItemDetail/ItemDetail.module.scss";
+import styles from "../ItemDetail/ItemDetail.module.scss";
 
 const ItemList = ({ products }) => {
   return (
 
-    // className={` ${styles.listContainer}`}
-    <ul className="flex justify-content-start align-items-center flex-wrap" >
+    //  className="flex justify-content-center align-items-center flex-wrap"
+    
+    <div className=" container-fluid mx-auto ">
+      <div className={` ${styles.listcontainer}`}>
     {products.map((product) => (
     <Item key={product.id} product={product} />
     ))}
     
-    </ul>
+    </div>
+    </div>
+    
   );
   }; 
 

@@ -16,20 +16,38 @@
 }
 
 .cart1{
-    width: 320px;
-    height: 400px;
+    width: 250px;
+    background-color:chocolate;
+    border-radius: 10px;
+}
+.carText{
+    text-align: center;
+    font-style: italic;
+    color: white;
 }
 
 .espacio{
-    margin-bottom: 6rem;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    background-color:burlywood;
+    gap: 5px;
+    padding: 0px 5px;
+    margin: 5px 5px;
+    width: 20vw;
+    height: 460px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.79);
+    transition: 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.list-container {
-    margin: 10px auto;
-    width: 80%;
-    padding: 5px;
-    display: flex;
+.listContainer {
+    display: inline-flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    gap: 5px;
     justify-content: center;
     align-items: center;
-  
+    margin-bottom: 20px;
     }

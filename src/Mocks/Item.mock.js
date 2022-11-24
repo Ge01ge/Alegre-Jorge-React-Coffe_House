@@ -10,7 +10,7 @@ export const items = [
   },
   {
     id: "2",
-    name: "Molino Manual MUELAS de ceramica Inox",
+    name: "Molino Manual MUELAS",
     description: "Fácilmente ajustable al tipo de molienda deseada (espresso, filtro, prensa francesa, etc.).Sencillo de lavar y desmontar.Manija extraíble que permite dejar el café en el frasco tapado.Capacidad: 50gr (Made in China)",
     category: "accesorio",
     stock: 10,
@@ -20,7 +20,7 @@ export const items = [
 
   {
     id: "3",
-    name: "NESCAFE DOLCA ORIGINAL",
+    name: "NESCAFE DOLCA Orig.",
     description: "Cafe Instantáneo DOYPACK de 225gr",
     category: "insumo",
     stock: 10,
@@ -36,15 +36,15 @@ export const items = [
     price: 360.50,
     img: "https://www.lacoopeencasa.coop/media/lcec/publico/articulos/c/c/8/cc8c16b40ddc39074e4c175d093a2d02",
   },
-  // {
-  //   id: "5",
-  //   name: "lalala",
-  //   description: "Cafe Instantáneo FRASCO de 100gr",
-  //   category: "insumo",
-  //   stock: 10,
-  //   price: 360.50,
-  //   img: "https://www.lacoopeencasa.coop/media/lcec/publico/articulos/c/c/8/cc8c16b40ddc39074e4c175d093a2d02",
-  // },
+  {
+    id: "5",
+    name: "lalala",
+    description: "Cafe Instantáneo FRASCO de 100gr",
+    category: "insumo",
+    stock: 10,
+    price: 360.50,
+    img: "https://www.lacoopeencasa.coop/media/lcec/publico/articulos/c/c/8/cc8c16b40ddc39074e4c175d093a2d02",
+  },
 ];
 
 
