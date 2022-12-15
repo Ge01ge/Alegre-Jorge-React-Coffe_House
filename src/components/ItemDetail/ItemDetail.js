@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./ItemDetail.module.scss";
 import { ItemCount } from "../ItemCount/ItemCount";
@@ -10,7 +11,7 @@ const ItemDetail = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
   const navigate = useNavigate();
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
 
@@ -67,10 +68,7 @@ const ItemDetail = ({ item }) => {
                 Sin stock
               </span>
             )}
-            <ItemCount
-              handleCount={handleCount}
-              count={count}
-            />
+
             <div className=" px-2">
               <button
                 onClick={handleAdd}
@@ -79,6 +77,8 @@ const ItemDetail = ({ item }) => {
               >
                 Agregar al carrito
               </button>
+              
+              <Link to="/cart">
               <button
                   onClick={handleCheckout}
                   className="btn btn-dark px-2 mx-4 my-2"
@@ -86,6 +86,8 @@ const ItemDetail = ({ item }) => {
                 >
                   Finalizar Compra
                 </button>
+              </Link>
+              
             </div>
           </div>
         </div>
