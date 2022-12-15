@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import styles from "../ItemDetail/ItemDetail.module.scss";
 
 const Item = ({ product }) => {
-  return (
 
-    // className={`d-inline-flex ${styles.espacio}`}
+  const navigate = useNavigate();
+
+  function handleNavigate() {
+    navigate(`/item/${product.id}`);
+  }
+
+  return (
 
     <div className={`d-inline-flex ${styles.espacio}`}>
       <div className={` ${styles.cart1}`}>
@@ -16,7 +22,8 @@ const Item = ({ product }) => {
           />
           <p className="card-text px-2">En Stock: {product.stock} Unidades</p>
           <p className="card-text px-2">Precio: ${product.price}</p>
-          <button type="button" className="btn btn-dark px-4 mx-4 my-2">
+          <button type="button" className="btn btn-dark px-4 mx-4 my-2" onClick={handleNavigate}>
+          {/* className="flex flex-col w-[200px] h-[350px] bg-white rounded p-4 shadow cursor-pointer transition-all hover:shadow-lg" */}
             Ver Detalle
           </button>
         </div>
