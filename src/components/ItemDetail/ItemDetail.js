@@ -4,16 +4,13 @@ import { useContext, useState } from "react";
 
 import styles from "./ItemDetail.module.scss";
 import { ItemCount } from "../ItemCount/ItemCount";
-import  CartContext  from "../Context/CartContext";
-
-// import { useCartContext } from "../../Context/CartContext";
+import CartContext from "../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
-
   const { addItem } = useContext(CartContext);
 
   const navigate = useNavigate();
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
 
@@ -24,8 +21,10 @@ const ItemDetail = ({ item }) => {
 
   function handleAdd() {
     if (currentStock < count) alert("No hay suficiente stock de este producto");
-    else setCurrentStock(currentStock - count);
-    addItem(item, count);
+    else {
+      setCurrentStock(currentStock - count);
+      addItem(item, count);
+    }
   }
 
   function handleCheckout() {
@@ -39,21 +38,39 @@ const ItemDetail = ({ item }) => {
           <img src={item.img} className={` ${styles.img}`} alt={item.name} />
           <h5 className="card-title mx-2">{item.name}</h5>
           <p className="card-text mx-2">{item.description}</p>
-          <p className="card-text mx-2"> <strong >Categoria: </strong>{item.category}</p>
+          <p className="card-text mx-2">
+            {" "}
+            <strong>Categoria: </strong>
+            {item.category}
+          </p>
 
           <span className="card-text mx-2">
-            <strong > Price: </strong>${item.price}
+            <strong> Price: </strong>${item.price}
           </span>
+
           {currentStock > 0 && (
-            <p className={`card-title p-2 m-2 border border-success rounded ${styles.textStock1}`}>In Stock: {currentStock}</p>
+            <p
+              className={`card-title p-2 m-2 border border-success rounded ${styles.textStock1}`}
+            >
+              In Stock: {currentStock}
+            </p>
           )}
+
           <div className=" ">
             {/* Count */}
             {currentStock > 0 ? (
               <ItemCount count={count} handleCount={handleCount} />
             ) : (
-              <span className={`card-title p-2 m-2 border border-danger rounded ${styles.textStock2}`}>Sin stock</span>
+              <span
+                className={`card-title p-2 m-2 border border-danger rounded ${styles.textStock2}`}
+              >
+                Sin stock
+              </span>
             )}
+            <ItemCount
+              handleCount={handleCount}
+              count={count}
+            />
             <div className=" px-2">
               <button
                 onClick={handleAdd}
@@ -63,11 +80,12 @@ const ItemDetail = ({ item }) => {
                 Agregar al carrito
               </button>
               <button
-                onClick={handleCheckout}
-                className="btn btn-dark px-2 mx-4 my-2"
-              >
-                Finalizar Compra
-              </button>
+                  onClick={handleCheckout}
+                  className="btn btn-dark px-2 mx-4 my-2"
+                  disabled={count === 0}
+                >
+                  Finalizar Compra
+                </button>
             </div>
           </div>
         </div>

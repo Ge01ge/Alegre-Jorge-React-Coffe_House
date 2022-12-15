@@ -11,18 +11,19 @@ import { useCartContext } from "../components/Context/CartContext";
 const CartView = () => {
 
   const {productsAdded, totalPrice} = useCartContext();
-  // const navigate = useNavigate();
 
-  // if (productsAdded.length === 0) {
-  //   return(
-  //     <div>
-  //       <p className="card-text px-2">No hay elementos en el carrito</p>
-  //       {/* <Link className="navbar-brand" to='/'>
-  //           Ir de Compras...
-  //       </Link> */}
-  //     </div>
-  //   );
-  // }
+  console.log({productsAdded})
+
+  if (productsAdded.length === 0) {
+    return(
+      <div>
+        <p className="card-text px-2">No hay elementos en el carrito</p>
+        {/* <Link className="navbar-brand" to='/'>
+            Ir de Compras...
+        </Link> */}
+      </div>
+    );
+  }
  
   return (
     <Layout>
