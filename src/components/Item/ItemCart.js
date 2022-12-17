@@ -5,18 +5,20 @@ import styles from "./ItemCart.module.scss";
 
 const ItemCart = ({ product }) => {
     const {removeItem} = useCartContext();
+
   return (
     <div className={`${styles.itemCart}`}>
       <img
-        src={product.img}
-        alt={product.name}
+        src={product.item.img}
+        alt={product.item.name}
         //   className={`mx-auto ${styles.img1}`}
       />
       <div>
-        <h5 className={`card-title p-2 `}>{product.name}</h5>
-        <p className="card-text px-2">Cantidad: {product.quantity} Unidades</p>
-        <p className="card-text px-2">Precio U.: ${product.price}</p>
-        <p className="card-text px-2">SubTotal: ${product.quantity * product.price}</p>
+        <h5 className={`card-title p-2 `}>{product.item.name}</h5>
+        <p className="card-text px-2">Cantidad: {product.quantityAdded} Unidades</p>
+        <p className="card-text px-2">Precio U.: ${product.item.price}</p>
+        <p className="card-text px-2">SubTotal: ${product.quantityAdded * product.item.price}</p>
+        
         <button
           type="button"
           className="btn btn-dark px-4 mx-4 my-2"
@@ -29,5 +31,6 @@ const ItemCart = ({ product }) => {
     </div>
   );
 };
+
 
 export default ItemCart;

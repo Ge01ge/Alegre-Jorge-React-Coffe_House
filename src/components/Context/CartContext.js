@@ -45,10 +45,10 @@ export const CartContextProvider = ({ children }) => {
     }
   
     const totalPrice = () =>{
-        return productsAdded.reduce((prev, act) => prev + act.quantity * act.price, 0);
+        return productsAdded.reduce((prev, act) => prev + act.quantityAdded * act.item.price, 0);
     }
 
-    const totalProducts = () => productsAdded.reduce((acumulador , productActual) => acumulador + productActual.quantity, 0);
+    const totalProducts = () => productsAdded.reduce((acumulador , productActual) => acumulador + productActual.quantityAdded, 0);
 
     return (
       <CartContext.Provider

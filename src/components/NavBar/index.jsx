@@ -28,11 +28,11 @@ export const NavBar = () => {
           >
             <div className="navbar-nav">
               <ul className="navbar-nav">
-                <li className="nav-item px-4">
+                {/* <li className="nav-item px-4">
                   <Link className="nav-link" to="/">
                     Us
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item px-4">
                   <Link className="nav-link" to="/category/accesorio">
                     Accesorios
