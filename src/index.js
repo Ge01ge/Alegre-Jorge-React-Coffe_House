@@ -8,6 +8,22 @@ import {CartContextProvider} from "./components/Context/CartContext"
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBT74QRRNhc7rx5LMeUCuZaaj7woiFmdog",
+  authDomain: "e-commerce-ch-coffe-house.firebaseapp.com",
+  projectId: "e-commerce-ch-coffe-house",
+  storageBucket: "e-commerce-ch-coffe-house.appspot.com",
+  messagingSenderId: "812174082820",
+  appId: "1:812174082820:web:79faacdac68a33f46e4651"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

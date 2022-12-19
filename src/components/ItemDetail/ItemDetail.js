@@ -8,7 +8,7 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
-  const { addItem } = useContext(CartContext);
+  const { addItem} = useContext(CartContext);
 
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
@@ -34,7 +34,7 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div>
-      <div className="card col-md-4 mx-auto">
+      <div className=" col-md-4 mx-auto">
         <div className="bg-warning text-dark bg-opacity-10">
           <img src={item.img} className={` ${styles.img}`} alt={item.name} />
           <h5 className="card-title mx-2">{item.name}</h5>
