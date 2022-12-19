@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {CartContextProvider} from "./components/Context/CartContext"
@@ -10,6 +11,7 @@ import { router } from "./router";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,7 +24,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

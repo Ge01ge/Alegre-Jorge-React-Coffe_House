@@ -4,10 +4,11 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Item from "../components/Item/Item";
+// import Item from "../components/Item/Item";
+// import { useCartContext } from "../components/Context/CartContext";
+// import { TrashWidget } from "../components/TrashWidget";
+
 import  CartContext  from "../components/Context/CartContext";
-import { useCartContext } from "../components/Context/CartContext";
-import { TrashWidget } from "../components/TrashWidget"; 
 import ItemCart from "../components/Item/ItemCart";
 
 const CartView = () => {
@@ -16,7 +17,7 @@ const CartView = () => {
   // const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { productsAdded, clear, totalPrice, totalProducts } = useContext(CartContext);
+  const { productsAdded, totalPrice, } = useContext(CartContext);
 
   // Ctrl + el clic en donde quiero en la palabra q quiero que me redireccione
 

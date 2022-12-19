@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { firebaseDb } from "../firebase";
+
+import { db } from "../../index";
 
 import Title from "../Title";
 // import { getData } from "../../Mocks/Item.mock";
@@ -27,13 +28,13 @@ export const ItemListContainer = ({ greeting }) => {
     //   );
 
     if (!category) {
-      const itemsCollection = collection(firebaseDb(), "items");
+      const itemsCollection = collection(db, "items");
       getDocs(itemsCollection).then((result) =>
         setItems(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
       );
     } else {
       const q = query(
-        collection(firebaseDb(), "items"),
+        collection(db, "items"),
         where("category", "==", category)
       );
       getDocs(q).then((result) =>
@@ -41,6 +42,7 @@ export const ItemListContainer = ({ greeting }) => {
       );
     }
   }, [category]);
+
 
   if (items.length === 0) {
     return <p>Loading...</p>;
