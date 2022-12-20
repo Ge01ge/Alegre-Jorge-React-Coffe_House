@@ -6,18 +6,19 @@ import styles from "./ItemDetail.module.scss";
 import { ItemCount } from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 
-const ItemDetail = ({ item, handleAdd, }) => {
+const ItemDetail = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
-  const [count, setCount] = useState(0);
-  const [currentStock, setCurrentStock] = useState(item.stock);
-  const maxQuantity = currentStock;
+  const [purchase, setPurchase] = useState(false);
+  const [currentStock, setCurrentStock] = useState(item?.stock);
+  
 
   function handleAdd(count) {
     if (currentStock < count) alert("No hay suficiente stock de este producto");
     else {
       setCurrentStock(currentStock - count);
       addItem(item, count);
+      setPurchase(true)
     }
   }
 
@@ -25,17 +26,17 @@ const ItemDetail = ({ item, handleAdd, }) => {
     <div>
       <div className=" col-md-4 mx-auto">
         <div className="bg-warning text-dark bg-opacity-10">
-          <img src={item.img} className={` ${styles.img}`} alt={item.name} />
-          <h5 className="card-title mx-2">{item.name}</h5>
-          <p className="card-text mx-2">{item.description}</p>
+          <img src={item?.img} className={` ${styles.img}`} alt={item?.name} />
+          <h5 className="card-title mx-2">{item?.name}</h5>
+          <p className="card-text mx-2">{item?.description}</p>
           <p className="card-text mx-2">
             {" "}
             <strong>Categoria: </strong>
-            {item.category}
+            {item?.category}
           </p>
 
           <span className="card-text mx-2">
-            <strong> Price: </strong>${item.price}
+            <strong> Price: </strong>${item?.price}
           </span>
 
           {currentStock > 0 && (
@@ -47,8 +48,8 @@ const ItemDetail = ({ item, handleAdd, }) => {
           )}
 
           <div className=" ">
-            {count === 0 ? (
-              <ItemCount stock={maxQuantity} handleAdd={handleAdd} />
+            {!purchase ? (
+              <ItemCount stock={item.stock} handleAdd={handleAdd} />
             ) : (
               // si el usuario agregó un producto, ItemCount se va a ocultar y en su lugar se va a ver el Link que lleva al carrito
               <Link to="/cart" className="btn btn-dark px-2 mx-4 my-2">

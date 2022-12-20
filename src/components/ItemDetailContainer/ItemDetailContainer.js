@@ -10,6 +10,8 @@ import { db } from "../../index";
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  
+  console.log(data)
 
   useEffect(() => {
     const refProps = [db, "items"];

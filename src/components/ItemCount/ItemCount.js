@@ -1,14 +1,11 @@
 import { useContext, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
 
-export const ItemCount = ({ handleAdd, handleCount, currentStock, stock }) => {
+export const ItemCount = ({ handleAdd,  stock }) => {
   const [count, setCount] = useState(1);
-  const maxQuantity = currentStock;
-
-  console.log(stock)
+  
 
   function handleCount(type) {
-    if (type === "plus" && count < maxQuantity) setCount(count + 1);
+    if (type === "plus" && count < stock) setCount(count + 1);
     if (type === "minus" && count > 1) setCount(count - 1);
   }
 
@@ -33,11 +30,10 @@ export const ItemCount = ({ handleAdd, handleCount, currentStock, stock }) => {
       >
         +
       </button>
-        <ItemDetail handleAdd={handleAdd} />
       <button
         onClick={() => handleAdd(count)}
         className=" bg-gray px-2 mx-4 my-2 rounded"
-        disabled={currentStock === 0}
+        disabled={stock === 0}
       >
         Agregar al carrito
       </button>
