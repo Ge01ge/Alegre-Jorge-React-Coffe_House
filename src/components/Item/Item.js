@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "../ItemDetail/ItemDetail.module.scss";
 
-const Item = ({ product }) => {
-
+const Item = ({ product, quantityAdded }) => {
   const navigate = useNavigate();
 
   function handleNavigate() {
@@ -10,7 +9,6 @@ const Item = ({ product }) => {
   }
 
   return (
-
     <div className={`d-inline-flex ${styles.espacio}`}>
       <div className={` ${styles.cart1}`}>
         <div className="card border border-dark bg-warning text-dark bg-opacity-10">
@@ -20,10 +18,25 @@ const Item = ({ product }) => {
             alt={product.description}
             className={`mx-auto ${styles.img1}`}
           />
-          <p className="card-text px-2">En Stock: {product.stock} Unidades</p>
+
+          <span
+            className={product.stock === 0 ? "text-xs text-red-500" : "text-xs"}
+          >
+            {product.stock === 0
+              ? "Sin Stock"
+              : quantityAdded
+              ? `Agregados: ${quantityAdded}`
+              : `En Stock: ${product.stock}`}
+          </span>
+
           <p className="card-text px-2">Precio: ${product.price}</p>
-          <button type="button" className="btn btn-dark px-4 mx-4 my-2" onClick={handleNavigate}>
-          {/* className="flex flex-col w-[200px] h-[350px] bg-white rounded p-4 shadow cursor-pointer transition-all hover:shadow-lg" */}
+          
+          <button
+            type="button"
+            className="btn btn-dark px-4 mx-4 my-2"
+            onClick={handleNavigate}
+          >
+            {/* className="flex flex-col w-[200px] h-[350px] bg-white rounded p-4 shadow cursor-pointer transition-all hover:shadow-lg" */}
             Ver Detalle
           </button>
         </div>

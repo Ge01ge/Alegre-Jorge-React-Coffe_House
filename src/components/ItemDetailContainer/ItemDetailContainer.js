@@ -4,17 +4,14 @@ import { getDoc, getDocs, collection, doc } from "firebase/firestore";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
 
-import {getData } from "../../Mocks/Item.mock";
+// import { getData } from "../../Mocks/Item.mock";
 import { db } from "../../index";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [item, setItem] = useState(null);
-  
   const [data, setData] = useState(null);
 
   useEffect(() => {
-
     const refProps = [db, "items"];
     const ref = id ? doc(...refProps, id) : collection(...refProps);
 
@@ -31,28 +28,26 @@ const ItemDetailContainer = () => {
       return;
     }
 
-     // If we need get all items
-     getDocs(ref).then((result) =>
-     setData(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
-   );
+    // If we need get all items
+    getDocs(ref).then((result) =>
+      setData(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+    );
+  }, []);
 
-    }, []);
-
-  if (!item) {
+  if (!data) {
     return <p>Loading...</p>;
   }
-  return(
-  <>
-    <ItemDetail item={item} />
-  </>
+  return (
+    <>
+      <ItemDetail item={data} />
+    </>
   );
 };
 
 export default ItemDetailContainer;
 
-
- // useEffect(() => {
-  //   getData().then(
-  //      (data) => setItem(data.find((prod)=> prod.id === id))
-  //    );
-  //  }, [id]);
+// useEffect(() => {
+//   getData().then(
+//      (data) => setItem(data.find((prod)=> prod.id === id))
+//    );
+//  }, [id]);

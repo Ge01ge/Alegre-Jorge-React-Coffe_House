@@ -84,7 +84,7 @@ const ItemDetail = ({ item }) => {
                   className="btn btn-dark px-2 mx-4 my-2"
                   disabled={count === 0}
                 >
-                  Finalizar Compra
+                  Confirmar Compra
                 </button>
               </Link>
               
