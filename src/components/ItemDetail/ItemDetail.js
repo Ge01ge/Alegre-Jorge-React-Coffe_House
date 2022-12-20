@@ -8,19 +8,18 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
-  const { addItem} = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
-  const navigate = useNavigate();
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
 
-  function handleCount(type) {
-    if (type === "plus" && count < maxQuantity) setCount(count + 1);
-    if (type === "minus" && count > 1) setCount(count - 1);
-  }
+  // function handleCount(type) {
+  //   if (type === "plus" && count < maxQuantity) setCount(count + 1);
+  //   if (type === "minus" && count > 1) setCount(count - 1);
+  // }
 
-  function handleAdd() {
+  function handleAdd(count) {
     if (currentStock < count) alert("No hay suficiente stock de este producto");
     else {
       setCurrentStock(currentStock - count);
@@ -28,9 +27,10 @@ const ItemDetail = ({ item }) => {
     }
   }
 
-  function handleCheckout() {
-    navigate("/cart");
-  }
+  // const navigate = useNavigate();
+  // function handleCheckout() {
+  //   navigate("/cart");
+  // }
 
   return (
     <div>
@@ -58,7 +58,7 @@ const ItemDetail = ({ item }) => {
           )}
 
           <div className=" ">
-            {/* Count */}
+            {/* Count
             {currentStock > 0 ? (
               <ItemCount count={count} handleCount={handleCount} />
             ) : (
@@ -67,19 +67,28 @@ const ItemDetail = ({ item }) => {
               >
                 Sin stock
               </span>
-            )}
+            )} */}
 
+            {/* si el usuario no agregó ningún producto, se va a ver ItemCount */}
+            {count === 0 ? (
+              <ItemCount count={count} handleCount={handleCount} />
+            ) : (
+              // si el usuario agregó un producto, ItemCount se va a ocultar y en su lugar se va a ver el Link que lleva al carrito
+              <Link to="/cart" className="btn btn-dark px-2 mx-4 my-2">
+                Confirmar Compra
+              </Link>
+            )}
             <div className=" px-2">
-              <button
+              {/* <button
                 onClick={handleAdd}
                 className=" bg-gray px-2 mx-4 my-2 rounded"
                 disabled={currentStock === 0}
               >
                 Agregar al carrito
-              </button>
-              
+              </button> */}
+
               <Link to="/cart">
-              <button
+                <button
                   onClick={handleCheckout}
                   className="btn btn-dark px-2 mx-4 my-2"
                   disabled={count === 0}
@@ -87,7 +96,6 @@ const ItemDetail = ({ item }) => {
                   Confirmar Compra
                 </button>
               </Link>
-              
             </div>
           </div>
         </div>

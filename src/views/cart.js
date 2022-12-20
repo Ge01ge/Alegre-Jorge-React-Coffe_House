@@ -17,7 +17,7 @@ import {
 const CartView = () => {
   const navigate = useNavigate();
   const [updatingProducts, setUpdatingProducts] = useState(false);
-  const { productsAdded, items, clear, totalPrice } = useContext(CartContext);
+  const { productsAdded: items, clear, totalPrice } = useContext(CartContext);
 
   const goToCheckout = () => {
     navigate("/checkout");
@@ -25,7 +25,7 @@ const CartView = () => {
 
   const order = {
     buyer: { name: "Jorge", phone: "123", email: "a@asas.com" },
-    items:productsAdded.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
+    items:items.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
     total: totalPrice(),
     // items,
     // total,
@@ -71,7 +71,7 @@ const CartView = () => {
       <h1>Cart View</h1>
 
       <div className="flex flex-col max-w-[50%]">
-        {productsAdded.length === 0 ? (
+        {items.length === 0 ? (
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-2xl">No has agregado productos</h1>
             <Link className="navbar-brand" to="/">
@@ -80,7 +80,7 @@ const CartView = () => {
           </div>
         ) : (
           <>
-            {productsAdded.map((product) => (
+            {items.map((product) => (
               <ItemCart key={product.item.id} product={product} />
             ))}
 
