@@ -1,5 +1,11 @@
-export const ItemCount = ({ count, handleCount }) => {
+import { useContext, useState } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
+
+export const ItemCount = ({ handleAdd, handleCount, currentStock, stock }) => {
   const [count, setCount] = useState(1);
+  const maxQuantity = currentStock;
+
+  console.log(stock)
 
   function handleCount(type) {
     if (type === "plus" && count < maxQuantity) setCount(count + 1);
@@ -8,7 +14,7 @@ export const ItemCount = ({ count, handleCount }) => {
 
   return (
     <div className="flex mt-10 w-4/5 bg-gray-200 rounded">
-      <ItemCount stock={maxQuantity} handleAdd={handleAdd} />
+      
       <button
         onClick={() => handleCount("minus")}
         className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
@@ -27,6 +33,7 @@ export const ItemCount = ({ count, handleCount }) => {
       >
         +
       </button>
+        <ItemDetail handleAdd={handleAdd} />
       <button
         onClick={() => handleAdd(count)}
         className=" bg-gray px-2 mx-4 my-2 rounded"

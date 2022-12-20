@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 
 const CheckoutView = () => {
-const [isLoading, setIsLoading] = useState(false);
+// const [isLoading, setIsLoading] = useState(false);
   const [updatingProducts, setUpdatingProducts] = useState(false);
   const { productsAdded, items, clear, totalPrice } = useContext(CartContext);
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const [isLoading, setIsLoading] = useState(false);
     const phone = event.target[1].value;
     const email = event.target[2].value;
 
-    setIsLoading(true);
+    // setIsLoading(true);
 
     const order = {
       buyer: { name, phone, email },
@@ -97,7 +97,7 @@ const [isLoading, setIsLoading] = useState(false);
         <button
           type="submit"
           className="rounded-lg p-2 bg-gray-800 text-dark disabled:opacity-50 p-2"
-          disabled={isLoading}
+          // disabled={isLoading}
         >
           Finalizar
         </button>

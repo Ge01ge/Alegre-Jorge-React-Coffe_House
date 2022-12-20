@@ -8,7 +8,7 @@ export const useCartContext = () => useContext (CartContext);
 export const CartContextProvider = ({ children }) => {
     const [productsAdded, setProductsAdded] = useState([]);
 
-    console.log( productsAdded);
+    // console.log( productsAdded);
 
     function addItem(item, quantity) {
       const isAlreadyAdded = isInCart(item.id);

@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,17 +6,12 @@ import styles from "./ItemDetail.module.scss";
 import { ItemCount } from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, handleAdd, }) => {
   const { addItem } = useContext(CartContext);
 
   const [count, setCount] = useState(0);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
-
-  // function handleCount(type) {
-  //   if (type === "plus" && count < maxQuantity) setCount(count + 1);
-  //   if (type === "minus" && count > 1) setCount(count - 1);
-  // }
 
   function handleAdd(count) {
     if (currentStock < count) alert("No hay suficiente stock de este producto");
@@ -26,11 +20,6 @@ const ItemDetail = ({ item }) => {
       addItem(item, count);
     }
   }
-
-  // const navigate = useNavigate();
-  // function handleCheckout() {
-  //   navigate("/cart");
-  // }
 
   return (
     <div>
@@ -58,45 +47,14 @@ const ItemDetail = ({ item }) => {
           )}
 
           <div className=" ">
-            {/* Count
-            {currentStock > 0 ? (
-              <ItemCount count={count} handleCount={handleCount} />
-            ) : (
-              <span
-                className={`card-title p-2 m-2 border border-danger rounded ${styles.textStock2}`}
-              >
-                Sin stock
-              </span>
-            )} */}
-
-            {/* si el usuario no agregó ningún producto, se va a ver ItemCount */}
             {count === 0 ? (
-              <ItemCount count={count} handleCount={handleCount} />
+              <ItemCount stock={maxQuantity} handleAdd={handleAdd} />
             ) : (
               // si el usuario agregó un producto, ItemCount se va a ocultar y en su lugar se va a ver el Link que lleva al carrito
               <Link to="/cart" className="btn btn-dark px-2 mx-4 my-2">
                 Confirmar Compra
               </Link>
             )}
-            <div className=" px-2">
-              {/* <button
-                onClick={handleAdd}
-                className=" bg-gray px-2 mx-4 my-2 rounded"
-                disabled={currentStock === 0}
-              >
-                Agregar al carrito
-              </button> */}
-
-              <Link to="/cart">
-                <button
-                  onClick={handleCheckout}
-                  className="btn btn-dark px-2 mx-4 my-2"
-                  disabled={count === 0}
-                >
-                  Confirmar Compra
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
