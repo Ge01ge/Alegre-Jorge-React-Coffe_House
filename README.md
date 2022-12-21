@@ -35,9 +35,9 @@ Recordatorio: el ecommerce tiene un backend realizado con Firebase, por si quier
 ## ScreenShots
 ![Home](https://i.pinimg.com/originals/60/3c/a2/603ca201d3ef46e5fdcf985f28359a05.jpg)
 ![Category:Accesorios](https://i.pinimg.com/originals/ff/96/53/ff96533d0c60cc3ddaa0764aa22458ba.jpg)
-![Item(1)](https://i.pinimg.com/originals/08/9a/21/089a21ee931af586b55d33baeeaa9b15.jpg)
-![Item(2)](https://i.pinimg.com/originals/7e/a9/f0/7ea9f096f7d13515eb84ed9209f9a900.jpg)
-![Carrito(Detalle de Compra)](https://i.pinimg.com/originals/7e/a9/f0/7ea9f096f7d13515eb84ed9209f9a900.jpg)
+![Item(Seleccionado Cantidad)](https://i.pinimg.com/originals/17/44/06/17440675dada4feaf77722f2caba205d.jpg)
+![Item(Confirmando)](https://i.pinimg.com/originals/7e/a9/f0/7ea9f096f7d13515eb84ed9209f9a900.jpg)
+![Carrito(Detalle de Compra)](https://i.pinimg.com/originals/37/28/32/372832bf542a95f89449b50d8e8e640d.jpg)
 ![Checkout(Confirmacion Orden de Compra)](https://i.pinimg.com/originals/34/a3/9d/34a39d9f215e4391fd6b2dd98c6aaf80.jpg)
 
 
