@@ -14,6 +14,7 @@ export const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    // logica anterior a firebase
     //  getData().then(
     //     (data) => {
     //       if (category) {
@@ -45,7 +46,7 @@ export const ItemListContainer = ({ greeting }) => {
 
 
   if (items.length === 0) {
-    return <p>Loading...</p>;
+    return <p>   ⌛️ ⏳ Loading  ⌛️ ⏳</p>;
   }
 
   return (

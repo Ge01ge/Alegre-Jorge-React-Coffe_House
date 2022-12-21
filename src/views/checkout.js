@@ -13,14 +13,14 @@ import {
 } from "firebase/firestore";
 
 const CheckoutView = () => {
-// const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [updatingProducts, setUpdatingProducts] = useState(false);
   const { productsAdded, items, clear, totalPrice } = useContext(CartContext);
   const navigate = useNavigate();
 
-//   const getTotalByProduct = (quantity, price) => {
-//     return quantity * price;
-//   };
+  //   const getTotalByProduct = (quantity, price) => {
+  //     return quantity * price;
+  //   };
 
   const handleFinalizePurchase = (event) => {
     event.preventDefault();
@@ -28,15 +28,22 @@ const CheckoutView = () => {
     const phone = event.target[1].value;
     const email = event.target[2].value;
 
-    // setIsLoading(true);
+    setIsLoading(true);
+
+    // const order = {
+    //   buyer: { name, phone, email },
+    //   items: productsAdded.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
+    //   total: totalPrice(),
+    // //   items,
+    // //   total,
+    // };
 
     const order = {
       buyer: { name, phone, email },
-      items: productsAdded.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
+      items: productsAdded,
       total: totalPrice(),
-    //   items,
-    //   total,
     };
+    console.log(order);
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
 
@@ -52,7 +59,7 @@ const CheckoutView = () => {
     if (updatingProducts) {
       const db = getFirestore();
 
-      items.forEach((element) => {
+      productsAdded.forEach((element) => {
         const itemRef = doc(db, "items", element.item.id);
         const dataToUpdate = {
           stock: element.item.stock - element.quantityAdded,
@@ -71,8 +78,47 @@ const CheckoutView = () => {
 
   return (
     <Layout>
-      <form onSubmit={handleFinalizePurchase} className="flex flex-col w-1/2">
-        <div className="flex flex-col">
+      <div className="container py-2">
+        <form onSubmit={handleFinalizePurchase}>
+          <div class="mb-3">
+            <input
+              className="form-control rounded-md"
+              placeholder="Nombre Completo"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              className="form-control rounded-md"
+              placeholder="Numero de Telefono"
+              type="number"
+              required
+            />
+          </div>
+          <div className="mb-3 ">
+            <input
+              className="form-control rounded-md"
+              placeholder="Email"
+              type={"email"}
+              required
+            />
+          </div>
+          <div className=" mb-3 ">
+            <span className=" py-2">
+              Total a pagar: <strong>${totalPrice()}</strong>
+            </span>
+          </div>
+          <button
+            type="submit"
+            className=" btn btn-dark text-white disabled:opacity-50 p-2"
+            disabled={isLoading}
+          >
+            Finalizar
+          </button>
+        </form>
+
+        {/* <form onSubmit={handleFinalizePurchase} className="flex flex-col w-1/2">
+        <div className="mb-3">
           <input
             className="h-8 pl-4 mb-4 rounded-md"
             placeholder="Nombre Completo"
@@ -92,16 +138,17 @@ const CheckoutView = () => {
           />
         </div>
         <span className=" py-2">
-          Total a pagar: <strong>${totalPrice}</strong>
+          Total a pagar: <strong>${totalPrice()}</strong>
         </span>
         <button
           type="submit"
           className="rounded-lg p-2 bg-gray-800 text-dark disabled:opacity-50 p-2"
-          // disabled={isLoading}
+          disabled={isLoading}
         >
           Finalizar
         </button>
-      </form>
+      </form> */}
+      </div>
     </Layout>
   );
 };

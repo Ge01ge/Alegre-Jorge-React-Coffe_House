@@ -1,19 +1,24 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 
-export const ItemCount = ({ handleAdd,  stock }) => {
+export const ItemCount = ({ handleAdd, currentStock, stock }) => {
   const [count, setCount] = useState(1);
-  
 
-  function handleCount(type) {
-    if (type === "plus" && count < stock) setCount(count + 1);
-    if (type === "minus" && count > 1) setCount(count - 1);
-  }
+  const restar = () => {
+    if (count > 1) {
+        setCount(count - 1);
+    } 
+}
 
+const sumar = () => {
+    if (count < stock) {
+        setCount(count + 1);
+    } 
+}
   return (
     <div className="flex mt-10 w-4/5 bg-gray-200 rounded">
       
       <button
-        onClick={() => handleCount("minus")}
+        onClick={restar}
         className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
       >
         -
@@ -25,7 +30,7 @@ export const ItemCount = ({ handleAdd,  stock }) => {
         {count}
       </span>
       <button
-        onClick={() => handleCount("plus")}
+        onClick={sumar}
         className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
       >
         +
@@ -33,7 +38,7 @@ export const ItemCount = ({ handleAdd,  stock }) => {
       <button
         onClick={() => handleAdd(count)}
         className=" bg-gray px-2 mx-4 my-2 rounded"
-        disabled={stock === 0}
+        disabled={currentStock === 0}
       >
         Agregar al carrito
       </button>

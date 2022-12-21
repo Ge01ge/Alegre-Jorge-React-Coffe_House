@@ -15,7 +15,7 @@ function App() {
   return (
    
       <Layout>
-        <ItemListContainer greeting='"Mi Tienda Online"' />
+        <ItemListContainer greeting='"Coffe House una tienda online para los amantes del cafe"' />
         {/* <CartWidget />  */}
       </Layout>
     

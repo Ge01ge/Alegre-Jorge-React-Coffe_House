@@ -1,10 +1,10 @@
 import Item from "../Item/Item";
-import styles from "../ItemDetail/ItemDetail.module.scss";
+import styles from "./ItemList.module.scss";
 
 const ItemList = ({ products }) => {
   return (
 
-    //  className="flex justify-content-center align-items-center flex-wrap"
+  
     
     <div className=" container-fluid mx-auto ">
       <div className={` ${styles.listcontainer}`}>

@@ -48,8 +48,3 @@ const ItemDetailContainer = () => {
 
 export default ItemDetailContainer;
 
-// useEffect(() => {
-//   getData().then(
-//      (data) => setItem(data.find((prod)=> prod.id === id))
-//    );
-//  }, [id]);

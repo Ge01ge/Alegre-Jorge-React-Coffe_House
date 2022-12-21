@@ -22,51 +22,7 @@ const CartView = () => {
   const goToCheckout = () => {
     navigate("/checkout");
   };
-
-  const order = {
-    buyer: { name: "Jorge", phone: "123", email: "a@asas.com" },
-    items:items.map(product => ({id: product.id, name: product.name, price: product.price, quantity: product.quantity})),
-    total: totalPrice(),
-    // items,
-    // total,
-  };
-
-  const db = getFirestore();
-  const ordersCollection = collection(db, "orders");
-
-  addDoc(ordersCollection, order)
-    .then(() => {
-      setUpdatingProducts(true);
-    })
-    .catch((err) => console.error({ err }))
-    .finally(() => {});
-
-  // Ctrl + el clic en donde quiero en la palabra q quiero que me redireccione
-
-  useEffect(() => {
-    if (updatingProducts) {
-      const db = getFirestore();
-
-      items.forEach((element) => {
-        const itemRef = doc(db, "items", element.item.id);
-        const dataToUpdate = {
-          stock: element.item.stock - element.quantityAdded,
-        };
-        updateDoc(itemRef, dataToUpdate)
-          .then(() => {
-            clear();
-            // setIsLoading(false);
-            alert("Compra finalizada");
-            navigate("/");
-          })
-          .catch((err) => console.error(err));
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [updatingProducts]);
-
-
-  return (
+ return (
     <Layout>
       <h1>Cart View</h1>
 

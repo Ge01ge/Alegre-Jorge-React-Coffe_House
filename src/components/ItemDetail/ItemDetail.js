@@ -49,7 +49,8 @@ const ItemDetail = ({ item }) => {
 
           <div className=" ">
             {!purchase ? (
-              <ItemCount stock={item.stock} handleAdd={handleAdd} />
+              // <ItemCount stock={item.stock} handleAdd={handleAdd} />
+              <ItemCount stock={item.stock} currentStock={currentStock} handleAdd={handleAdd} />
             ) : (
               // si el usuario agregó un producto, ItemCount se va a ocultar y en su lugar se va a ver el Link que lleva al carrito
               <Link to="/cart" className="btn btn-dark px-2 mx-4 my-2">

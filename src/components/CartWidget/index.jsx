@@ -9,10 +9,10 @@ import { useCartContext } from "../Context/CartContext";
 export const CartWidget = () =>{
     const {totalProducts} = useCartContext();
     return (
-        <>
+        <span >
         <i className={`bi bi-cart-plus-fill pt-2 ${styles.cart_icon}`} ></i>
-        <span>{totalProducts() || ''}</span>
-        </>
+        <span className={`${styles.contador_carrito}`}>{totalProducts() || ''}</span>
+        </span>
         
     );
     

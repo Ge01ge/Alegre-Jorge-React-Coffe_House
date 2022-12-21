@@ -1,4 +1,18 @@
 .cart_icon{
     font-size: 30px  !important;
-    /* padding-top: 100px  !important; */
+    color: white;
 }
+
+.contador_carrito {
+    background-color: chartreuse;
+    color:black;
+    border-radius: 50%;
+    border: 3px solid #000;
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 15px;
+    font-weight: bolder;
+    top: 30px;
+    right: 1.7vw;
+    position: absolute;
+  }
