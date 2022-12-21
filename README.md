@@ -40,4 +40,6 @@ Recordatorio: el ecommerce tiene un backend realizado con Firebase, por si quier
 ![Carrito(Detalle de Compra)](https://i.pinimg.com/originals/37/28/32/372832bf542a95f89449b50d8e8e640d.jpg)
 ![Checkout(Confirmacion Orden de Compra)](https://i.pinimg.com/originals/34/a3/9d/34a39d9f215e4391fd6b2dd98c6aaf80.jpg)
 
+## Deploy del Proyecto [link de Vercel](https://alegre-jorge-react-coffe-house.vercel.app/ "link de Vercel")
+
 
