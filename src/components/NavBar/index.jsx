@@ -7,7 +7,7 @@ export const NavBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand px-2" to="/">
+          <Link className="navbar-brand px-2 fs-1" to="/">
             Coffe-House
           </Link>
           <button
@@ -25,17 +25,17 @@ export const NavBar = () => {
             <div class="navbar-nav">
               <ul className="navbar-nav">
                 <li className="nav-item px-4">
-                  <Link className="nav-link" to="/category/accesorio">
+                  <Link className="nav-link fs-3" to="/category/accesorio">
                     Accesorios
                   </Link>
                 </li>
                 <li className="nav-item px-4">
-                  <Link className="nav-link" to="/category/insumo">
+                  <Link className="nav-link fs-3" to="/category/insumo">
                     Insumos
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav_link px-4" to="/cart">
+                  <Link className="nav_link px-4 fs-3" to="/cart">
                     <CartWidget />
                   </Link>
                 </li>

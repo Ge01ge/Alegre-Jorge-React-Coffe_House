@@ -11,7 +11,7 @@ const Item = ({ product, quantityAdded }) => {
   return (
     <div className={`d-inline-flex ${styles.espacio}`}>
       <div className={` ${styles.cart1}`}>
-        <div className="card border border-dark bg-warning text-dark bg-opacity-10">
+        <div className="card border border-dark bg-warning bg-opacity-10">
           <h5 className={`card-title p-2 ${styles.carText}`}>{product.name}</h5>
           <img
             src={product.img}
@@ -20,7 +20,7 @@ const Item = ({ product, quantityAdded }) => {
           />
 
           <span
-            className={product.stock === 0 ? "text-xs text-red-500" : "text-xs"}
+            className={product.stock === 0 ? "fs-5 text-danger px-4 py-2 mx-auto my-2 border border-danger rounded bg-light" : "fs-5 text-success px-4 py-2 mx-auto my-2 border border-success rounded bg-light" }
           >
             {product.stock === 0
               ? "Sin Stock"
@@ -29,14 +29,13 @@ const Item = ({ product, quantityAdded }) => {
               : `En Stock: ${product.stock}`}
           </span>
 
-          <p className="card-text px-2">Precio: ${product.price}</p>
+          <p className="card-text  text-white px-4">Precio: ${product.price}</p>
           
           <button
             type="button"
             className="btn btn-dark px-4 mx-4 my-2"
             onClick={handleNavigate}
           >
-            {/* className="flex flex-col w-[200px] h-[350px] bg-white rounded p-4 shadow cursor-pointer transition-all hover:shadow-lg" */}
             Ver Detalle
           </button>
         </div>

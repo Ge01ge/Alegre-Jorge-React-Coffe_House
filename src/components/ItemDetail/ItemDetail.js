@@ -24,27 +24,30 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div>
-      <div className=" col-md-4 mx-auto">
-        <div className="bg-warning text-dark bg-opacity-10">
+      <div className=" col-6 col-md-4 mx-auto p-2 my-2">
+        <div className={` ${styles.cart1}`}>
           <img src={item?.img} className={` ${styles.img}`} alt={item?.name} />
-          <h5 className="card-title mx-2">{item?.name}</h5>
-          <p className="card-text mx-2">{item?.description}</p>
-          <p className="card-text mx-2">
+          <h5 className="mx-4 text-white fs-3">{item?.name}</h5>
+          <p className={` mx-4 text-white ${styles.justifyP}`}>{item?.description}</p>
+          <p className={` mx-4 text-white ${styles.justifyP}`}>
             {" "}
             <strong>Categoria: </strong>
             {item?.category}
           </p>
 
-          <span className="card-text mx-2">
+          <span className="text-white mx-4 ">
             <strong> Price: </strong>${item?.price}
           </span>
 
           {currentStock > 0 && (
-            <p
-              className={`card-title p-2 m-2 border border-success rounded ${styles.textStock1}`}
+            <p className={` my-2 ${styles.justifyP}`}>
+            <span
+              className={`fs-5 text-white px-4 py-2 my-4 ${styles.margin1}`}
             >
               In Stock: {currentStock}
+            </span>
             </p>
+            
           )}
 
           <div className=" ">
@@ -53,7 +56,7 @@ const ItemDetail = ({ item }) => {
               <ItemCount stock={item.stock} currentStock={currentStock} handleAdd={handleAdd} />
             ) : (
               // si el usuario agregó un producto, ItemCount se va a ocultar y en su lugar se va a ver el Link que lleva al carrito
-              <Link to="/cart" className="btn btn-dark px-2 mx-4 my-2">
+              <Link to="/cart" className={`btn btn-dark px-2 my-4 ${styles.margin1}`}>
                 Confirmar Compra
               </Link>
             )}

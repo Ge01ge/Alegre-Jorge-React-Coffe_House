@@ -1,4 +1,5 @@
 import {  useState } from "react";
+import styles from "../ItemDetail/ItemDetail.module.scss";
 
 export const ItemCount = ({ handleAdd, currentStock, stock }) => {
   const [count, setCount] = useState(1);
@@ -15,29 +16,31 @@ const sumar = () => {
     } 
 }
   return (
-    <div className="flex mt-10 w-4/5 bg-gray-200 rounded">
+    <div className="mx-4 ">
       
       <button
         onClick={restar}
-        className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        // className=" fs-4 text-dark rounded-5"
+        className={`fs-4 text-danger rounded-5 ${styles.widthCount}`}
+
       >
         -
       </button>
       <span
         id="counter"
-        className="flex flex-1 justify-center items-center mx-4 font-bold"
+        className=" mx-2 text-white font-bold"
       >
         {count}
       </span>
       <button
         onClick={sumar}
-        className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        className={`fs-4 text-success rounded-5 ${styles.widthCount}`}
       >
         +
       </button>
       <button
         onClick={() => handleAdd(count)}
-        className=" bg-gray px-2 mx-4 my-2 rounded"
+        className=" btn btn-dark px-2 mx-4 my-2 rounded "
         disabled={currentStock === 0}
       >
         Agregar al carrito

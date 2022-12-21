@@ -4,7 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 
 import { db } from "../../index";
 
-import Title from "../Title";
+// import Title from "../Title";
 // import { getData } from "../../Mocks/Item.mock";
 
 import ItemList from "../ItemList/ItemList";
@@ -51,7 +51,7 @@ export const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      <Title greeting={greeting} />
+      {/* <Title greeting={greeting} /> */}
       <ItemList products={items} />
     </>
   );

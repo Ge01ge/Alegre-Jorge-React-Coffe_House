@@ -2,8 +2,8 @@ import "./App.css";
 import ItemListContainer from "./components/ItemListContainer";
 // import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
-import  CartContext  from "./components/Context/CartContext";
-import  { CartContextProvider } from "./components/Context/CartContext";
+// import  CartContext  from "./components/Context/CartContext";
+// import  { CartContextProvider } from "./components/Context/CartContext";
 import { Layout } from "./components/Layout";
 
 

@@ -7,7 +7,6 @@ const ItemView = () => {
   
     return (
         <Layout>
-            <h3> Detalle Del Producto </h3>
             <ItemDetailContainer />
         </Layout>
     );
