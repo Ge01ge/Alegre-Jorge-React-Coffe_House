@@ -26,9 +26,9 @@ const CartView = () => {
  return (
     <Layout>
 
-      <div className="flex flex-col max-w-[50%]">
+      <div className="">
         {items.length === 0 ? (
-          <div className="flex flex-col items-center justify-center">
+          <div className=" items-center justify-center">
             <h1 className="text-2xl px-4 py-2">No has agregado productos</h1>
             <Link className={`fs-5 text-decoration-none ${styles.margin2}`} to="/">
               Ir de Compras...✔️

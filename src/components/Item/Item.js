@@ -9,9 +9,9 @@ const Item = ({ product, quantityAdded }) => {
   }
 
   return (
-    <div className={`d-inline-flex ${styles.espacio}`}>
+    <div className={` ${styles.espacio}`}>
       <div className={` ${styles.cart1}`}>
-        <div className="card border border-dark bg-warning bg-opacity-10">
+        <div className={`card bg-warning bg-opacity-10 ${styles.mb}`}>
           <h5 className={`card-title p-2 ${styles.carText}`}>{product.name}</h5>
           <img
             src={product.img}
@@ -29,11 +29,11 @@ const Item = ({ product, quantityAdded }) => {
               : `En Stock: ${product.stock}`}
           </span>
 
-          <p className="card-text  text-white px-4">Precio: ${product.price}</p>
+          <p className="card-text  text-white px-2">Precio: ${product.price}</p>
           
           <button
             type="button"
-            className="btn btn-dark px-4 mx-4 my-2"
+            className="btn btn-dark px-4 mx-2 mb-2"
             onClick={handleNavigate}
           >
             Ver Detalle

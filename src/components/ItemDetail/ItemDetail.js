@@ -24,8 +24,8 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div>
-      <div className=" col-6 col-md-4 mx-auto p-2 my-2">
-        <div className={` ${styles.cart1}`}>
+      <div className=" d-flex justify-content-center p-2 my-2">
+        <div className={` ${styles.cart2}`}>
           <img src={item?.img} className={` ${styles.img}`} alt={item?.name} />
           <h5 className="mx-4 text-white fs-3">{item?.name}</h5>
           <p className={` mx-4 text-white ${styles.justifyP}`}>{item?.description}</p>

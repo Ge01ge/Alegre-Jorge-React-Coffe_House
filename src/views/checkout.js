@@ -117,37 +117,6 @@ const CheckoutView = () => {
           </button>
         </form>
 
-        {/* <form onSubmit={handleFinalizePurchase} className="flex flex-col w-1/2">
-        <div className="mb-3">
-          <input
-            className="h-8 pl-4 mb-4 rounded-md"
-            placeholder="Nombre Completo"
-            required
-          />
-          <input
-            className="h-8 pl-4 mb-4 rounded-md"
-            placeholder="Numero de Telefono"
-            type="number"
-            required
-          />
-          <input
-            className="h-8 pl-4 mb-4 rounded-md"
-            placeholder="Email"
-            type={"email"}
-            required
-          />
-        </div>
-        <span className=" py-2">
-          Total a pagar: <strong>${totalPrice()}</strong>
-        </span>
-        <button
-          type="submit"
-          className="rounded-lg p-2 bg-gray-800 text-dark disabled:opacity-50 p-2"
-          disabled={isLoading}
-        >
-          Finalizar
-        </button>
-      </form> */}
       </div>
     </Layout>
   );

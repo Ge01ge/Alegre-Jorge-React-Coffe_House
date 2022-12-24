@@ -1,46 +1,44 @@
 .img{
-    width: 250px;
-    height: 250px;
-    margin: 20px 10px;
+    width: 80%;
+    height: 30vh;
+    margin: 10px 10%;
     border-radius: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
+    
 }
 .img1{
-    width: 200px;
-    height: 200px;
-    margin: 20px 10px;
+    width: 70%;
+    height: 30vh;
+    margin: 10px;
     border-radius: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .cart1{
-    width: 25vw;
+    width: 280px;
+    max-height:75vh;
     background-color:chocolate;
     border-radius: 10px;
+    margin:10px 0 ;
+}
+
+.cart2{
+    width: 50vh;
+    max-height:100vh;
+    background-color:chocolate;
+    border-radius: 10px;
+    margin:10px 0 ;
+}
+
+.mb{
+
+    margin-bottom: 10px;
 }
 .carText{
     text-align: center;
     font-style: italic;
     color: white;
+    width: 90%;
 }
-// .textStock1{
-//     text-align:center;
-//     color:rgb(119, 225, 14);
-//     font: 1em sans-serif;
-//     width: 110px;
-//     border-radius: 5px;
-    
-// }
-// .textStock2{
-//     text-align: center;
-//     color: red;
-//     font: 1em sans-serif;
-//     text-decoration:dashed;
-    
 
-// }
 .justifyP{
     text-align:justify;
 }
@@ -52,16 +50,20 @@
     margin-bottom: 1rem;
 }
 
+.mBoton{
+    margin-left: 30px;
+}
+
 .espacio{
     display:flex;
     flex-direction:row;
     align-items: center;
     background-color:burlywood;
-    gap: 5px;
+    gap: 10px;
     padding: 0px 5px;
-    margin: 5px 5px;
-    width: 20vw;
-    height: 460px;
+    // margin: 5px 5px;
+    width: 300px;
+    // height: 75vh;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.79);
     transition: 0.3s ease;
     border-radius: 10px;

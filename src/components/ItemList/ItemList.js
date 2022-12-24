@@ -3,8 +3,8 @@ import styles from "./ItemList.module.scss";
 
 const ItemList = ({ products }) => {
   return (
-    <div className=" container-fluid  ">
-      <div className={`justify-content-center ${styles.listContainer}`}>
+    <div className=" container-fluid row">
+      <div className={`${styles.listContainer}`}>
         {products.map((product) => (
           <Item key={product.id} product={product} />
         ))}

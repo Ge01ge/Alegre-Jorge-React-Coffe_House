@@ -40,7 +40,7 @@ const sumar = () => {
       </button>
       <button
         onClick={() => handleAdd(count)}
-        className=" btn btn-dark px-2 mx-4 my-2 rounded "
+        className= {`btn btn-dark px-2 my-2 rounded ${styles.mBoton}`}
         disabled={currentStock === 0}
       >
         Agregar al carrito
